@@ -1,0 +1,100 @@
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    transition: all 400ms ease-in-out;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #222;
+    padding-bottom: 5px;
+    border-bottom: 3px solid transparent;
+    transition: border-bottom 0.3s;
+}
+
+.nav a.active, .nav a:hover {
+    border-bottom: 3px solid #f4a261;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.menu-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+.menu-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.menu-item .details {
+    flex-grow: 1;
+    text-align: left;
+}
+.menu-item h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #222;
+}
+.menu-item p {
+    margin: 3px 0;
+    font-size: 0.85rem;
+    color: #666;
+}
+.menu-item .price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #222;
+}
+.nav a {
+    cursor: pointer;
+    padding: 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+.nav a.active {
+    font-weight: bold;
+}
