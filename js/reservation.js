@@ -1,5 +1,3 @@
-console.log("reservation berhasil dimuat");
-
 const nav = document.querySelector("nav");
 
 window.addEventListener("scroll", function () {
@@ -45,6 +43,7 @@ let cart = [];
 let totalPrice = 0;
 
 window.addToCart = function (item, price) {
+    console.log("reservation berhasil dimuat");
     cart.push({ item, price });
     totalPrice += price;
     updateCart();

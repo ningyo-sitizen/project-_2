@@ -12,3 +12,10 @@ document.addEventListener("DOMContentLoaded", function() {
 console.log("menu")
 
 });
+
+window.addToCart = function (item, price) {
+    console.log("reservation berhasil dimuat");
+    cart.push({ item, price });
+    totalPrice += price;
+    updateCart();
+};
