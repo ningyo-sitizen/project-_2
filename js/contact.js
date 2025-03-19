@@ -1,16 +1,29 @@
 (function() {
     emailjs.init("_AZHylIuXRh6WK_yv"); 
-  })();
+})();
 
-
-  function sendmail(event) {
+function sendmail(event) {
     console.log("send")
     event.preventDefault();
 
+    // Ambil nilai input
+    var sendername = document.querySelector("#fullname").value.trim();
+    var email = document.querySelector("#email").value.trim();
+    var message = document.querySelector("#message").value.trim();
+
+    if (!sendername || !email || !message) {
+        console.log(sendername == false);
+        console.log(sendername);
+        console.log(email);
+        console.log(message);
+        alert("Semua kolom harus diisi!");
+        return;
+    }
+
     var params = {
-        sendername: document.querySelector("#fullname").value,
-        email: document.querySelector("#email").value,
-        message: document.querySelector("#message").value
+        sendername: sendername,
+        email: email,
+        message: message
     };
 
     var serviceID = "service_hgevzlk"; 
@@ -18,10 +31,10 @@
 
     emailjs.send(serviceID, templateID, params)
         .then(function(response) {
-            alert("Message sent successfully!");
+            alert("Pesan berhasil dikirim!");
             console.log("SUCCESS!", response.status, response.text);
         }, function(error) {
-            alert("Failed to send message.");
+            alert("Gagal mengirim pesan.");
             console.log("FAILED...", error);
         });
 }
