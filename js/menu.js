@@ -69,7 +69,6 @@ function updateCart() {
             removeFromCart(item);
         };
 
-        // Tambahkan elemen ke dalam <li>
         li.appendChild(itemText);
         li.appendChild(minusButton);
         li.appendChild(plusButton);
