@@ -35,14 +35,13 @@ function updateCart() {
     let cartList = document.getElementById("cart-items");
     let totalElement = document.getElementById("total-price");
 
-    cartList.innerHTML = ""; // Hapus list lama sebelum update
-    totalPrice = 0; // Reset total harga
+    cartList.innerHTML = ""; 
+    totalPrice = 0; 
 
     cart.forEach(({ item, price, quantity, image }) => {
         let li = document.createElement("li");
         li.classList.add("cart-item");
 
-        // Buat elemen gambar
         let img = document.createElement("img");
         img.src = image;
         img.alt = item;
