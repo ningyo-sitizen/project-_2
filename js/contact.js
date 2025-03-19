@@ -6,7 +6,6 @@ function sendmail(event) {
     console.log("send")
     event.preventDefault();
 
-    // Ambil nilai input
     var sendername = document.querySelector("#fullname").value.trim();
     var email = document.querySelector("#email").value.trim();
     var message = document.querySelector("#message").value.trim();

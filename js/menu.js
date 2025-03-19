@@ -120,7 +120,7 @@ window.checkout = function () {
 function sendmail(event) {
     event.preventDefault();
 
-    // Format cart items for email
+
     let cartItems = cart.map(item => {
         return `
             <div>
@@ -140,6 +140,18 @@ function sendmail(event) {
         cart: cartItems,
         totalPrice: totalPrice
     };
+    
+    var sendername = document.querySelector("#fullname").value.trim();
+    var phonenumber = document.querySelector("#phonenumber").value.trim();
+    var email = document.querySelector("#email").value.trim();
+    var persons = document.querySelector("#persons").value.trim();
+    var date = document.querySelector("#date").value.trim();
+    var time = document.querySelector("#time").value.trim();
+
+        if (!sendername || !phonenumber || !email ||!persons ||!date || !time) {
+        alert("Semua kolom dalm form reservasi harus diisi");
+        return;
+    }
 
     var serviceID = "service_tq5dg6t";
     var templateID = "template_im2xrem";

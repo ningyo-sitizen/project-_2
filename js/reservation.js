@@ -17,6 +17,17 @@ window.addEventListener("scroll", function () {
 function sendmail(event) {
     event.preventDefault();
 
+    console.log("test")
+
+    if (!sendername || !phonenumber || !email ||!persons ||!date || !time) {
+        console.log(sendername == false);
+        console.log(sendername);
+        console.log(email);
+        console.log(message);
+        alert("Semua kolom harus diisi!");
+        return;
+    }
+
     // Format cart items for email
     let cartItems = cart.map(item => {
         return `
