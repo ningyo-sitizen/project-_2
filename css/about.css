@@ -267,25 +267,27 @@ footer {
 }
 
 .btn-secondary {
-    background-color: #8b5a2b;
+    background-color: #ffffff;
     border: none;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .btn-secondary:hover {
-    background-color: #6d4c41;
+    background-color: #ffcc00;
     transform: scale(1.05);
-}
-
-.btn-primary {
-    background-color: #4e342e;
-    border: none;
     color: white;
 }
 
+.btn-primary {
+    background-color: #ffffff;
+    border: none;
+    color: rgb(0, 0, 0);
+}
+
 .btn-primary:hover {
-    background-color: #3e2723;
+    background-color: #ffcc00;
     transform: scale(1.05);
+    color: white;
 }
 
 .position-relative {
