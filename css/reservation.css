@@ -60,6 +60,7 @@
     border-radius: 5px;
     cursor: pointer;
     background: #f9f9f9;
+
 }
 
 .menu-item:hover {
@@ -84,11 +85,12 @@
 }
 
 .cart-item {
-    display: flex;
+    display: grid;
     align-items: center;
     margin-bottom: 10px;
     padding: 5px;
     border-bottom: 1px solid #ddd;
+    grid-template-columns: 25% 45% 10% 10% 10%;
 
 }
 
