@@ -16,15 +16,15 @@ console.log("menu")
 let cart = [];
 let totalPrice = 0;
 
-window.addToCart = function (item, price) {
-    console.log("Menambahkan item ke cart:", item, price);
+window.addToCart = function (item, price, image) {
+    console.log("Menambahkan item ke cart:", item, price, image);
     
     // Cek apakah item sudah ada di cart
     let existingItem = cart.find(cartItem => cartItem.item === item);
     if (existingItem) {
         existingItem.quantity += 1;  // Tambah jumlah jika sudah ada
     } else {
-        cart.push({ item, price, quantity: 1 }); // Tambah item baru
+        cart.push({ item, price, quantity: 1, image }); // Tambah item baru
     }
     
     totalPrice += price;
@@ -38,8 +38,15 @@ function updateCart() {
     cartList.innerHTML = ""; // Hapus list lama sebelum update
     totalPrice = 0; // Reset total harga
 
-    cart.forEach(({ item, price, quantity }) => {
+    cart.forEach(({ item, price, quantity, image }) => {
         let li = document.createElement("li");
+        li.classList.add("cart-item");
+
+        // Buat elemen gambar
+        let img = document.createElement("img");
+        img.src = image;
+        img.alt = item;
+        img.classList.add("cart-img");
 
         // Buat elemen teks untuk item
         let itemText = document.createElement("span");
@@ -58,7 +65,7 @@ function updateCart() {
         plusButton.textContent = " + ";
         plusButton.classList.add("cart-btn");
         plusButton.onclick = function () {
-            addToCart(item, price);
+            addToCart(item, price, image);
         };
 
         // Buat tombol "X" untuk menghapus item
@@ -69,6 +76,8 @@ function updateCart() {
             removeFromCart(item);
         };
 
+        // Tambahkan elemen ke dalam <li>
+        li.appendChild(img);
         li.appendChild(itemText);
         li.appendChild(minusButton);
         li.appendChild(plusButton);

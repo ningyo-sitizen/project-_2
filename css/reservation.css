@@ -70,11 +70,13 @@
 .cart {
     width: 100%;
     max-width: 600px;
+    max-height: 300px;
     border: 1px solid #ccc;
     padding: 15px;
     background: #f9f9f9;
     border-radius: 5px;
     margin-top: 20px;
+    overflow: scroll;
 }
 
 .cart h3 {
