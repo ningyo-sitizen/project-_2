@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/contact.css">
@@ -150,7 +151,7 @@
             <ul id="cart-items"></ul>
         </div>
         <p>Total: <span id="total-price">$0</span></p>
-        <button onclick="checkout()">Checkout</button>
+        <button onclick="sendmail(event)">Checkout</button>
     </div>
 
     <footer>

@@ -17,13 +17,25 @@ window.addEventListener("scroll", function () {
 function sendmail(event) {
     event.preventDefault();
 
+    // Format cart items for email
+    let cartItems = cart.map(item => {
+        return `
+            <div>
+                <img src="${item.image}" alt="${item.item}" style="width: 50px; height: 50px;">
+                <p>${item.item} - $${item.price} x ${item.quantity}</p>
+            </div>
+        `;
+    }).join('');
+
     var params = {
         sendername: document.querySelector("#fullname").value,
         phonenumber: document.querySelector("#phonenumber").value,
         email: document.querySelector("#email").value,
         persons: document.querySelector("#persons").value,
         date: document.querySelector("#date").value,
-        time: document.querySelector("#time").value
+        time: document.querySelector("#time").value,
+        cart: cartItems,
+        totalPrice: totalPrice
     };
 
     var serviceID = "service_tq5dg6t";
@@ -38,15 +50,4 @@ function sendmail(event) {
             console.log("FAILED...", error);
         });
 }
-
-let cart = [];
-let totalPrice = 0;
-
-window.addToCart = function (item, price) {
-    console.log("reservation berhasil dimuat");
-    cart.push({ item, price });
-    totalPrice += price;
-    updateCart();
-};
-
 
