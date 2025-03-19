@@ -47,11 +47,9 @@ function updateCart() {
         img.alt = item;
         img.classList.add("cart-img");
 
-        // Buat elemen teks untuk item
         let itemText = document.createElement("span");
         itemText.textContent = `${item} - $${price} x ${quantity} `;
 
-        // Buat tombol "-" untuk mengurangi jumlah
         let minusButton = document.createElement("button");
         minusButton.textContent = " - ";
         minusButton.classList.add("cart-btn");
@@ -59,7 +57,6 @@ function updateCart() {
             decreaseQuantity(item, price);
         };
 
-        // Buat tombol "+" untuk menambah jumlah
         let plusButton = document.createElement("button");
         plusButton.textContent = " + ";
         plusButton.classList.add("cart-btn");
@@ -67,7 +64,6 @@ function updateCart() {
             addToCart(item, price, image);
         };
 
-        // Buat tombol "X" untuk menghapus item
         let removeButton = document.createElement("button");
         removeButton.textContent = " X ";
         removeButton.classList.add("cart-btn-remove");
