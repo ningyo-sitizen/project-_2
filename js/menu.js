@@ -13,9 +13,99 @@ console.log("menu")
 
 });
 
+let cart = [];
+let totalPrice = 0;
+
 window.addToCart = function (item, price) {
-    console.log("reservation berhasil dimuat");
-    cart.push({ item, price });
+    console.log("Menambahkan item ke cart:", item, price);
+    
+    // Cek apakah item sudah ada di cart
+    let existingItem = cart.find(cartItem => cartItem.item === item);
+    if (existingItem) {
+        existingItem.quantity += 1;  // Tambah jumlah jika sudah ada
+    } else {
+        cart.push({ item, price, quantity: 1 }); // Tambah item baru
+    }
+    
     totalPrice += price;
+    updateCart();
+};
+
+function updateCart() {
+    let cartList = document.getElementById("cart-items");
+    let totalElement = document.getElementById("total-price");
+
+    cartList.innerHTML = ""; // Hapus list lama sebelum update
+    totalPrice = 0; // Reset total harga
+
+    cart.forEach(({ item, price, quantity }) => {
+        let li = document.createElement("li");
+
+        // Buat elemen teks untuk item
+        let itemText = document.createElement("span");
+        itemText.textContent = `${item} - $${price} x ${quantity} `;
+
+        // Buat tombol "-" untuk mengurangi jumlah
+        let minusButton = document.createElement("button");
+        minusButton.textContent = " - ";
+        minusButton.classList.add("cart-btn");
+        minusButton.onclick = function () {
+            decreaseQuantity(item, price);
+        };
+
+        // Buat tombol "+" untuk menambah jumlah
+        let plusButton = document.createElement("button");
+        plusButton.textContent = " + ";
+        plusButton.classList.add("cart-btn");
+        plusButton.onclick = function () {
+            addToCart(item, price);
+        };
+
+        // Buat tombol "X" untuk menghapus item
+        let removeButton = document.createElement("button");
+        removeButton.textContent = " X ";
+        removeButton.classList.add("cart-btn-remove");
+        removeButton.onclick = function () {
+            removeFromCart(item);
+        };
+
+        // Tambahkan elemen ke dalam <li>
+        li.appendChild(itemText);
+        li.appendChild(minusButton);
+        li.appendChild(plusButton);
+        li.appendChild(removeButton);
+        
+        // Masukkan <li> ke dalam daftar
+        cartList.appendChild(li);
+        
+        // Hitung ulang total harga
+        totalPrice += price * quantity;
+    });
+
+    totalElement.textContent = `$${totalPrice}`;
+}
+
+// Fungsi untuk mengurangi jumlah item
+function decreaseQuantity(item, price) {
+    let existingItem = cart.find(cartItem => cartItem.item === item);
+    if (existingItem && existingItem.quantity > 1) {
+        existingItem.quantity -= 1;
+        totalPrice -= price;
+    } else {
+        removeFromCart(item);
+    }
+    updateCart();
+}
+
+// Fungsi untuk menghapus item dari cart
+function removeFromCart(item) {
+    cart = cart.filter(cartItem => cartItem.item !== item);
+    updateCart();
+}
+
+window.checkout = function () {
+    alert(`Total Order: $${totalPrice}`);
+    cart = [];
+    totalPrice = 0;
     updateCart();
 };
