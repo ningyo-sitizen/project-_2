@@ -65,7 +65,7 @@
         </div>
         <div style="height: 50px;"></div>
     </div>
-    
+
     <footer>
         <div class="footer-container">
             <div class="footer-section">
@@ -89,70 +89,70 @@
             <p>&copy; 2021 Touché. All rights reserved.</p>
         </div>
     </footer>
-        <script src="js/home.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        <script src="js/menu.js"></script>
-        <script>
-            const menuItems = [
-              {
-                id: "Kwdp-0pok-I",  // Unsplash image ID
+    <script src="js/home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="js/menu.js"></script>
+    <script>
+        const menuItems = [
+            {
+                id: "sc5sTPMrVfk",
                 name: "Dragon Bite Burger",
                 desc: "Spicy burger with secret sauce.",
                 price: 18,
                 category: "foods"
-              },
-              {
-                id: "6VhPY27jdps",
+            },
+            {
+                id: "pe9dvM1rQkM",
                 name: "Thunder Steak",
                 desc: "Juicy, flame-grilled steak.",
                 price: 25,
                 category: "foods"
-              },
-              {
-                id: "1iTKoFJvJ6E",
+            },
+            {
+                id: "Ad1t2dMXtmQ",
                 name: "Nebula Latte",
                 desc: "Espresso with frothed milk.",
                 price: 12,
                 category: "drinks"
-              },
-              {
-                id: "4DihobT7k",
+            },
+            {
+                id: "9Gz5bMWdGYE",
                 name: "Solar Flare Smoothie",
                 desc: "Berry, blueberry, and passion fruit.",
                 price: 10,
                 category: "drinks"
-              },
-              {
-                id: "cb_ppfNXLSU",
+            },
+            {
+                id: "X5u6snvBCf0",
                 name: "Celestial Swirl",
                 desc: "Vanilla ice cream with caramel.",
                 price: 8,
                 category: "dessert"
-              },
-              {
-                id: "Iiqo64hiwZo",
+            },
+            {
+                id: "LdLI47dOZUU",
                 name: "Galactic Delight",
                 desc: "Cheesecake with berries.",
                 price: 10,
                 category: "dessert"
-              }
-            ];
-            
-                const menuContainer = {
-                  foods: document.getElementById("foods"),
-                  drinks: document.getElementById("drinks"),
-                  dessert: document.getElementById("dessert")
-                };
-                
-                menuItems.forEach(item => {
-                  fetch(`https://api.unsplash.com/photos/${item.id}?client_id=tqC7v5LZ5mqpTOx6ztTqt8LUGe0HFyEhjkec53WGayo`)
-                    .then(res => res.json())
-                    .then(data => {
-                      const div = document.createElement("div");
-                      div.className = "menu-item";
-                      div.onclick = () => addToCart(item.name, item.price, data.urls.small);
-                
-                      div.innerHTML = `
+            }
+        ];
+
+        const menuContainer = {
+            foods: document.getElementById("foods"),
+            drinks: document.getElementById("drinks"),
+            dessert: document.getElementById("dessert")
+        };
+
+        menuItems.forEach(item => {
+            fetch(`https://api.unsplash.com/photos/${item.id}?client_id=tqC7v5LZ5mqpTOx6ztTqt8LUGe0HFyEhjkec53WGayo`)
+                .then(res => res.json())
+                .then(data => {
+                    const div = document.createElement("div");
+                    div.className = "menu-item";
+                    div.onclick = () => addToCart(item.name, item.price, data.urls.small);
+
+                    div.innerHTML = `
                         <img src="${data.urls.small}" alt="${item.name}">
                         <div class="details">
                           <h4>${item.name}</h4>
@@ -160,13 +160,13 @@
                         </div>
                         <span class="price">$${item.price}</span>
                       `;
-                
-                      menuContainer[item.category].appendChild(div);
-                    })
-                    .catch(err => console.error(`Error loading ${item.name}:`, err));
-                });
-                </script>
-                
+
+                    menuContainer[item.category].appendChild(div);
+                })
+                .catch(err => console.error(`Error loading ${item.name}:`, err));
+        });
+    </script>
+
 </body>
 
 </html>

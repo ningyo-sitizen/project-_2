@@ -7,7 +7,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/contact.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>JoCoffee - Contact Us</title>
 </head>
@@ -50,31 +51,37 @@
     <h5 class="contact-h5">Tell us about your experience</h5>
     <div class="container">
         <div class="form-container">
-    <form>
-        <div class="form-group">
-          <input type="text" class="form-control" id="fullname" placeholder="fullname" required>
-          <small id="emailHelp" class="form-text text-muted">We'll never share your fullname with anyone else.</small>
+            <form>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="fullname" placeholder="fullname" required>
+                        <small class="form-text text-muted">We'll never share your fullname with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="email" placeholder="email" id="email" required>
+                        <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <textarea style="width: 100%; height: 200px;" id="message" placeholder="message"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary send-button" onclick="sendmail(event)">Submit</button>
+                </form>
         </div>
-        <div class="form-group">
-          <input type="email" class="email" placeholder="email" id="email" required>
-          <small id="emailHelp" class="form-text text-muted">We'll never share your fullname with anyone else.</small>
-        </div>
-        <div class="form-group">
-            <textarea style="width: 100%; height: 200px;" id="message" placeholder="message" required></textarea>
-          </div>        
-        <button type="submit" class="btn btn-primary send-button" onclick="sendmail(event)">Submit</button>
-      </form>
-      </div>
-      </div>
+    </div>
 
-      <div class="space" style="height: 4rem;"></div>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.269538625164!2d106.81340407483026!3d-6.3591485936308665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ee9fb92f1bc7%3A0xf616b34310b067d3!2sCCIT!5e0!3m2!1sid!2sid!4v1742197218454!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="space" style="height: 4rem;"></div>
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.269538625164!2d106.81340407483026!3d-6.3591485936308665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ee9fb92f1bc7%3A0xf616b34310b067d3!2sCCIT!5e0!3m2!1sid!2sid!4v1742197218454!5m2!1sid!2sid"
+        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
 
     <footer>
         <div class="footer-container">
             <div class="footer-section">
                 <h4>ABOUT US</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Corrupti dolorum, sint corporis nostrum, possimus unde eos vitae eius quasi saepe.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Corrupti dolorum, sint corporis nostrum,
+                    possimus unde eos vitae eius quasi saepe.</p>
             </div>
             <div class="footer-section">
                 <h4>CONTACT INFO</h4>
@@ -93,9 +100,13 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="js/home.js"></script>
- <script src="js/contact.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="js/home.js"></script>
+    <script src="js/contact.js"></script>
+
+
 
 </body>
 

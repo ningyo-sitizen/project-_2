@@ -10,8 +10,16 @@ function sendmail(event) {
     var email = document.querySelector("#email").value.trim();
     var message = document.querySelector("#message").value.trim();
 
+    const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+
     if (!sendername || !email || !message) {
         alert("Semua kolom harus diisi!");
+        return;
+    }
+
+    
+    if (!emailPattern.test(email)) {
+        alert("Masukkan email yang valid.");
         return;
     }
 
