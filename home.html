@@ -37,7 +37,7 @@
       </div>
     </header>
     <div class="hero-container">
-        <div class="hero-image" role="img"></div>
+        <div class="hero-image" id="hero-image" role="img"></div>
         <div class="hero-text">
             <h1>JoCoffee</h1>
             <h3>Make your day better with a JoCoffee</h3>
@@ -49,56 +49,56 @@
             <div class="col-12 col-md-8 col-lg-6 text-center">
               <h2 class="mb-2">Our gallery</h2>
   
-              <p class="mb-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <p class="mb-6"></p>
             </div>
           </div>
-          <div class="row gx-3" data-isotope>
+          <div class="row gx-3" data-isotope id="gallery">
             <div class="col-6 col-sm-6 col-md-4">
 
                 <a class="d-block mb-3" href="#" data-bigpicture='{ "imgSrc": "https://github.com/ningyo-sitizen/project-_2/blob/master/images/gal%201.jpg?raw=true" }'>
-                <img class="img-fluid" src="https://github.com/ningyo-sitizen/project-_2/blob/master/images/gal%201.jpg?raw=true" alt="..." />
+                <img class="img-fluid" src="" alt="..." />
               </a>
             </div>
             <div class="col-6 col-sm-6 col-md-4">
 
                 <a class="d-block mb-3" href="#" data-bigpicture='{ "imgSrc": "https://github.com/ningyo-sitizen/project-_2/blob/master/images/gal%202.jpg?raw=true" }'>
-                <img class="img-fluid" src="https://github.com/ningyo-sitizen/project-_2/blob/master/images/gal%202.jpg?raw=true" alt="..." />
+                <img class="img-fluid" src="" alt="..." />
               </a>
             </div>
             <div class="col-6 col-sm-6 col-md-4">
 
                 <a class="d-block mb-3" href="#" data-bigpicture='{ "imgSrc": "https://github.com/ningyo-sitizen/project-_2/blob/master/images/gal%203.jpg?raw=true" }'>
-                <img class="img-fluid" src="https://github.com/ningyo-sitizen/project-_2/blob/master/images/gal%203.jpg?raw=true" alt="..." />
+                <img class="img-fluid" src="" alt="..." />
               </a>
             </div>
             <div class="col-6 col-sm-6 col-md-4">
 
                 <a class="d-block mb-3" href="#" data-bigpicture='{ "https://github.com/ningyo-sitizen/project-_2/blob/master/images/gal%204.jpg?raw=true" }'>
-                <img class="img-fluid" src="https://github.com/ningyo-sitizen/project-_2/blob/master/images/gal%204.jpg?raw=true" alt="..." />
+                <img class="img-fluid" src="" alt="..." />
               </a>
             </div>
             <div class="col-6 col-sm-6 col-md-4">
 
                 <a class="d-block mb-3" href="#" data-bigpicture='{ "imgSrc": "https://github.com/ningyo-sitizen/project-_2/blob/master/images/gal%205.jpg?raw=true" }'>
-                <img class="img-fluid" src="https://github.com/ningyo-sitizen/project-_2/blob/master/images/gal%205.jpg?raw=true" alt="..." />
+                <img class="img-fluid" src="" alt="..." />
               </a>
             </div>
             <div class="col-6 col-sm-6 col-md-4">
 
                 <a class="d-block mb-3" href="#" data-bigpicture='{ "https://github.com/ningyo-sitizen/project-_2/blob/master/images/gal%206.jpg?raw=true" }'>
-                <img class="img-fluid" src="https://github.com/ningyo-sitizen/project-_2/blob/master/images/gal%206.jpg?raw=true" alt="..." />
+                <img class="img-fluid" src="" alt="..." />
               </a>
             </div>
             <div class="col-6 col-sm-6 col-md-4">
 
                 <a class="d-block mb-3" href="#" data-bigpicture='{ "imgSrc": "https://github.com/ningyo-sitizen/project-_2/blob/master/images/gal%207.jpg?raw=true" }'>
-                <img class="img-fluid" src="https://github.com/ningyo-sitizen/project-_2/blob/master/images/gal%207.jpg?raw=true" alt="..." />
+                <img class="img-fluid" src="" alt="..." />
               </a>
             </div>
             <div class="col-6 col-sm-6 col-md-4">
 
                 <a class="d-block mb-3" href="#" data-bigpicture='{ "imgSrc": "https://github.com/ningyo-sitizen/project-_2/blob/master/images/gal%208.jpg?raw=true" }'>
-                <img class="img-fluid" src="https://github.com/ningyo-sitizen/project-_2/blob/master/images/gal%208.jpg?raw=true" alt="..." />
+                <img class="img-fluid" src="" alt="..." />
               </a>
             </div>
           </div>
@@ -129,7 +129,51 @@
             <p>&copy; 2021 Touché. All rights reserved.</p>
         </div>
     </footer>
-<script src="js/home.js"></script>
+<script src="js/home.js">
+  
+</script>
+<script nonce="random-generated-value">
+fetch("https://api.unsplash.com/photos/Kwdp-0pok-I?client_id=tqC7v5LZ5mqpTOx6ztTqt8LUGe0HFyEhjkec53WGayo")
+  .then(res => res.json())
+  .then(data => {
+    const imageUrl = data.urls.full;
+    console.log(imageUrl);  
+    document.getElementById("hero-image").style.backgroundImage = `url(${imageUrl})`;
+  })
+  .catch(err => {
+    console.error("Error fetching image:", err);
+    document.getElementById("hero-image").style.backgroundImage = "url('fallback-image-url.jpg')";
+  });
+
+  const imageIds = [
+  "Kwdp-0pok-I", "6VhPY27jdps", "1iTKoFJvJ6E",
+  "3b2tADGAWnU", "4DihobT7k", "aw6UewokOIo",
+  "cb_ppfNXLSU", "Iiqo64hiwZo","X4RJG4aNi8o","8jp-6SjVibM"
+];
+
+const gallery = document.getElementById("gallery");
+gallery.innerHTML = "";
+
+imageIds.forEach(id => {
+  fetch(`https://api.unsplash.com/photos/${id}?client_id=tqC7v5LZ5mqpTOx6ztTqt8LUGe0HFyEhjkec53WGayo`)
+    .then(res => res.json())
+    .then(data => {
+      const col = document.createElement("div");
+      col.className = "col-6 col-sm-6 col-md-4";
+
+      col.innerHTML = `
+        <a class="d-block mb-3" href="#" data-bigpicture='{ "imgSrc": "${data.urls.full}" }'>
+          <img class="img-fluid" src="${data.urls.small}" alt="${data.alt_description || 'Unsplash Image'}" />
+        </a>
+      `;
+      gallery.appendChild(col);
+    })
+    .catch(err => console.error(`Error fetching image ${id}:`, err));
+});
+
+</script>
+
+
 
 </body>
 </html>

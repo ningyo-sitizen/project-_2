@@ -11,10 +11,6 @@ function sendmail(event) {
     var message = document.querySelector("#message").value.trim();
 
     if (!sendername || !email || !message) {
-        console.log(sendername == false);
-        console.log(sendername);
-        console.log(email);
-        console.log(message);
         alert("Semua kolom harus diisi!");
         return;
     }

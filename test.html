@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Daftar Sneakers</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4; }
+    h1 { text-align: center; }
+    .grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px; }
+    .card { background-color: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); padding: 15px; width: 220px; text-align: center; }
+    .card img { max-width: 100%; height: auto; border-radius: 6px; }
+    .card h3 { margin: 10px 0 5px; }
+    .card p { margin: 0; font-size: 0.9em; color: #555; }
+  </style>
+</head>
+<body>
+
+  <h1>Daftar Sneakers</h1>
+  <div class="grid" id="sneakerGrid">Memuat...</div>
+
+  <script>
+fetch("https://api.unsplash.com/photos/Kwdp-0pok-I?client_id=tqC7v5LZ5mqpTOx6ztTqt8LUGe0HFyEhjkec53WGayo")
+  .then(res => res.json())
+  .then(data => {
+    const imageUrl = data[0].urls.full; // You can also use 'small', 'regular', or 'thumb' based on your requirements
+    
+    document.getElementById("hero-image").style.backgroundImage = `url(${imageUrl})`;
+  })
+  .catch(err => console.error("Error fetching image:", err));
+
+  </script>
+
+</body>
+</html>

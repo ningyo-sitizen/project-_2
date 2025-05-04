@@ -19,12 +19,11 @@ let totalPrice = 0;
 window.addToCart = function (item, price, image) {
     console.log("Menambahkan item ke cart:", item, price, image);
     
-    // Cek apakah item sudah ada di cart
     let existingItem = cart.find(cartItem => cartItem.item === item);
     if (existingItem) {
-        existingItem.quantity += 1;  // Tambah jumlah jika sudah ada
+        existingItem.quantity += 1;
     } else {
-        cart.push({ item, price, quantity: 1, image }); // Tambah item baru
+        cart.push({ item, price, quantity: 1, image }); 
     }
     
     totalPrice += price;
@@ -149,7 +148,7 @@ function sendmail(event) {
     var time = document.querySelector("#time").value.trim();
 
         if (!sendername || !phonenumber || !email ||!persons ||!date || !time) {
-        alert("Semua kolom dalm form reservasi harus diisi");
+        alert("Semua kolom dalam form reservasi harus diisi");
         return;
     }
 

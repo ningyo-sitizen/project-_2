@@ -64,6 +64,8 @@
     border-radius: 5px;
     margin-top: 20px;
     overflow: scroll;
+    overflow-x: hidden;
+
 }
 
 .cart h3 {
