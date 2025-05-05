@@ -155,7 +155,7 @@ const gallery = document.getElementById("gallery");
 gallery.innerHTML = "";
 
 imageIds.forEach(id => {
-  fetch(`https://api.unsplash.com/photos/${id}?client_id=tqC7v5LZ5mqpTOx6ztTqt8LUGe0HFyEhjkec53WGayo`)
+  fetch(`https://api.unsplash.com/photos/${id}?client_id=`)
     .then(res => res.json())
     .then(data => {
       const col = document.createElement("div");
