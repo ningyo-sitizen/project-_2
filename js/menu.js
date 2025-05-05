@@ -113,7 +113,7 @@ window.checkout = function () {
 };
 
 (function () {
-    emailjs.init("e_18YHlJ-8z1LxEOp");
+    emailjs.init("");
 })();
 
 function sendmail(event) {
