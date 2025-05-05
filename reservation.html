@@ -188,7 +188,7 @@
         };
 
         menuItems.forEach(item => {
-            fetch(`https://api.unsplash.com/photos/${item.id}?client_id=tqC7v5LZ5mqpTOx6ztTqt8LUGe0HFyEhjkec53WGayo`)
+            fetch(`https://api.unsplash.com/photos/${item.id}?client_id=`)
                 .then(res => res.json())
                 .then(data => {
                     const div = document.createElement("div");
